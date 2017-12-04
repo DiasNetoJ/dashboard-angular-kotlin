@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>USC Dashboard - Portal</title>
+</head>
+
+<body ngClass="" [className]="getToggledClass()">
+<div class="container body">
+  <div class="main_container">
+
+    <div class="col-md-3 left_col">
+      <div class="left_col scroll-view">
+        <div class="navbar nav_title" style="border: 0;">
+          <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>USC - Dashboard</span></a>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <!-- menu profile quick info -->
+        <div class="profile">
+          <div class="profile_pic">
+            <img src="../assets/images/img.jpg" alt="..." class="img-circle profile_img">
+          </div>
+          <div class="profile_info">
+            <span>Bem Vindo,</span>
+            <h2>Robson Fernandes</h2>
+          </div>
+        </div>
+        <!-- /menu profile quick info -->
+
+        <br/>
+
+        <!-- sidebar menu -->
+        <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+          <div class="menu_section">
+            <h3>&nbsp;</h3>
+            <ul class="nav side-menu">
+              <li><a><i class="fa fa-home"></i> Home</a></li>
+            </ul>
+            <ul class="nav side-menu">
+              <li><a><i class="fa fa-university"></i> Instituição</a></li>
+            </ul>
+            <ul class="nav side-menu">
+              <li><a><i class="fa fa-user"></i> Aluno</a></li>
+            </ul>
+            <ul class="nav side-menu">
+              <li><a><i class="fa fa-user"></i> Orientador</a></li>
+            </ul>
+            <ul class="nav side-menu">
+              <li><a><i class="fa fa-file-o"></i> Publicação</a></li>
+            </ul>
+            <ul class="nav side-menu">
+              <li><a><i class="fa fa-clone"></i> Curso</a></li>
+            </ul>
+          </div>
+
+        </div>
+        <!-- /sidebar menu -->
+      </div>
+    </div>
+
+    <!-- top navigation -->
+    <div class="top_nav">
+      <div class="nav_menu">
+        <nav class="" role="navigation">
+          <div class="nav toggle" (click)="toggleCollapse()">
+            <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+          </div>
+
+        </nav>
+      </div>
+    </div>
+    <!-- /top navigation -->
+
+    <!-- Carregamento dos Módulo -->
+    <div class="right_col" role="main">
+      <div>
+        <div>
+          <!-- Indicador 5 - Totalizadores Gerais da Instituição -->
+          <div class="row tile_count">
+            <indicador-total titulo="Total de alunos">5000</indicador-total>
+            <indicador-total titulo="Total de Orientadores" cor="blue">500</indicador-total>
+            <indicador-total titulo="Total de Cursos" cor="green">100</indicador-total>
+            <indicador-total titulo="Total de Publicações" cor="orange">1000</indicador-total>
+          </div>
+          <!-- /top tiles -->
+
+          <div class="row">
+
+            <!-- Indicador 1 - Rank 5 Alunos com Publicações -->
+            <div class="col-md-8 col-sm-4 col-xs-12">
+              <div class="x_panel tile fixed_height_320">
+                <div class="x_title">
+                  <h2>Top 5 </h2>
+                  <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link" style="margin-left: 50px;"><i class="fa fa-chevron-up"></i></a></li>
+                  </ul>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  <h4 style="text-align: center">Alunos por Publicação</h4>
+                  <!--<div id="chartRankAlunosPublicacao" style="height: 250px"></div>-->
+                  <grafico-colunas nome="Publicações" [dados]="[50,20,30,100,80]"
+                                   [categorias]="['Robson Fernandes', 'David Fernandes', 'Cléia Fernandes', 'Rodrigo de Abreu', 'Lauro Castilho']"></grafico-colunas>
+                </div>
+              </div>
+            </div>
+
+            <!-- Indicador 3 - Comparativo -->
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="x_panel tile fixed_height_320">
+                <div class="x_title">
+                  <h2>Comparativo</h2>
+                  <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link" style="margin-left: 50px;"><i class="fa fa-chevron-up"></i></a></li>
+                  </ul>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  <h4 style="text-align: center">Alunos Ativos e Inativos</h4>
+                  <grafico-pizza nome="Alunos" [dados]="[['Ativos', 60],['Inativos', 40]]"></grafico-pizza>
+                  <!--<div id="chartComparativoAlunos" style="height: 200px"></div>-->
+                </div>
+              </div>
+            </div>
+
+            <!-- Indicador 2 - Rank 5 Orientadores com Publicações -->
+            <div class="col-md-8 col-sm-4 col-xs-12">
+              <div class="x_panel tile fixed_height_320">
+                <div class="x_title">
+                  <h2>Top 5 </h2>
+                  <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link" style="margin-left: 50px;"><i class="fa fa-chevron-up"></i></a></li>
+                  </ul>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  <h4 style="text-align: center">Orientadores por Publicação</h4>
+                  <grafico-colunas nome="Publicações" [dados]="[100,200,350,100,150]"
+                                   [categorias]="['Alneu Andrade', 'João Paulo', 'Nilceu Marana', 'Roberta Spolon', 'Francisco Louzada']"></grafico-colunas>
+                </div>
+              </div>
+            </div>
+
+            <!-- Indicador 4 - Comparativo -->
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="x_panel tile fixed_height_320">
+                <div class="x_title">
+                  <h2>Comparativo</h2>
+                  <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link" style="margin-left: 50px;"><i class="fa fa-chevron-up"></i></a></li>
+                  </ul>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  <h4 style="text-align: center">Orientadores Ativos e Inativos</h4>
+                  <grafico-pizza nome="Alunos" [dados]="[['Ativos', 60],['Inativos', 40]]"></grafico-pizza>
+                  <!--<div id="chartComparativoOrientadores" style="height: 200px"></div>-->
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- /Carregamento dos Módulo -->
+
+    <!-- Rodapé -->
+    <footer>
+      <div class="pull-right">Unip GEP Portal</div>
+      <div class="clearfix"></div>
+    </footer>
+    <!-- /Rodapé -->
+  </div>
+</div>
+</body>
+</html>

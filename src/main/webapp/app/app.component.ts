@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  collapsed = false;
+  toggledClass = "nav-md";
+
+  toggleCollapse() {
+    this.collapsed = !this.collapsed;
+  }
+
+  getToggledClass() {
+    return this.collapsed ? 'nav-sm' : 'nav-md';
+  }
 }

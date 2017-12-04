@@ -1,0 +1,6 @@
+<div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+  <span class="count_top"><i class="fa fa-user"></i> {{ titulo }}</span>
+  <div class="count" [ngStyle]="{ 'color': getColor() }">
+    <ng-content></ng-content>
+  </div>
+</div>
