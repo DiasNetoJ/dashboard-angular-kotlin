@@ -1,21 +1,19 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "outDir": "target/www/dist",
+    "outDir": "target/www/app",
     "baseUrl": "./",
     "module": "es2015",
     "sourceMap": true,
     "types": [],
     "moduleResolution": "node",
     "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "lib": ["es6", "dom"]
   },
   "exclude": [
     "test.ts",
     "**/*.spec.ts"
-  ],
-  "include": [
-    "src/main/webapp/app",
-    "src/test/javascript"
   ]
+
 }
