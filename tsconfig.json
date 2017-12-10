@@ -1,21 +1,23 @@
 {
-  "compileOnSave": false,
   "compilerOptions": {
+    "outDir": "target/www/app",
+    "baseUrl": "./",
+    "module": "es2015",
     "sourceMap": true,
-    "declaration": false,
+    "types": [],
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "outDir": "./target/www/app",
     "target": "es5",
+    "lib": ["es6", "dom"],
     "typeRoots": [
       "node_modules/@types"
-    ],
-    "lib": [
-      "es2017",
-      "dom"
     ]
   },
+  "exclude": [
+    "test.ts",
+    "**/*.spec.ts"
+  ],
   "include": [
     "src/main/webapp/app",
     "src/test/javascript"

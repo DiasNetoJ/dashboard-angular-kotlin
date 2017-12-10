@@ -12,7 +12,7 @@ export class TotalizadoresComponent implements OnInit {
 
 
   totalizadores: Totalizador[];
-  constructor(private totalizadoresService: TotalizadoresService) {
+  constructor(@Inject(TotalizadoresService) private totalizadoresService: TotalizadoresService) {
     console.log("Constructor called!");
   }
 

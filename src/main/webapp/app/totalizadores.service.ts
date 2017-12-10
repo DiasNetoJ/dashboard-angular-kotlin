@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class TotalizadoresService {
-  constructor(private http: Http) { }
+  constructor(@Inject(Http) private http: Http) { }
 
   getTotalizadores(): Observable<any> {
     return this.http.get('api/totalizadores').map((res: Response) => res.json());

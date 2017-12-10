@@ -31,6 +31,11 @@ module.exports = {
         exclude: ['./src/main/webapp/index.html']
       },
       {
+        test: /\.css$/,
+        loaders: ['to-string-loader', 'css-loader'],
+        exclude: /(vendor\.css|global\.css)/
+      },
+      {
         test: /\.(jpe?g|png|gif|svg|woff2?|ttf|eot)$/i,
         loaders: ['file-loader?hash=sha512&digest=hex&name=[hash].[ext]']
       },
