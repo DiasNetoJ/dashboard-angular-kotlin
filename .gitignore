@@ -17,6 +17,18 @@
 .settings/
 *.sublime-workspace
 
+######################
+# Intellij
+######################
+.idea/
+*.iml
+*.iws
+*.ipr
+*.ids
+*.orig
+classes/
+target/
+
 # IDE - VSCode
 .vscode/*
 !.vscode/settings.json
