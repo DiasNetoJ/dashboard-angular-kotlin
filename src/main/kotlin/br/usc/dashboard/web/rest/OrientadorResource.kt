@@ -14,7 +14,9 @@ class OrientadorResource(val repository: OrientadorRepository, val service: Orie
   @GetMapping("/orientadores/comparativo")
   fun getComparativo() = service.getComparativo()
   @GetMapping("/orientadores/publicacoes")
-  fun getPublicacoes() = repository.findAll().groupBy({ it.nome }, { it.publicacoes.count() })
+  fun getPublicacoes() = repository.findAll()
+    .groupBy({ it.nome }, { it.publicacoes.count() })
+    .map { mapOf("nome" to it.key, "total" to it.value[0] ) }
   @GetMapping("/orientadores/count")
   fun getCount() = repository.count()
 }

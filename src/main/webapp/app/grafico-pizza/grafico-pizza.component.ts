@@ -9,12 +9,15 @@ import { Chart } from 'angular-highcharts';
 export class GraficoPizzaComponent implements OnInit {
 
   chart : Chart;
-  @Input() dados: any[];
   @Input() nome: string;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  carregarGrafico(dados: any[]) {
+    console.log('Aquecendo pizza: ' + dados);
     this.chart = new Chart({
       chart: {
         options3d: {
@@ -48,9 +51,10 @@ export class GraficoPizzaComponent implements OnInit {
       series: [{
         type: 'pie',
         name: this.nome,
-        data: this.dados
+        data: dados
       }]
     });
+    console.log(this.chart);
   }
 
 }

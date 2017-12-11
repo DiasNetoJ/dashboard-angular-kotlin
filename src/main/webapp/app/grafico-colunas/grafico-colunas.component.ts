@@ -9,13 +9,15 @@ import { Chart } from 'angular-highcharts';
 export class GraficoColunasComponent implements OnInit {
 
   chart : Chart;
-  @Input() categorias: string[];
-  @Input() dados: any[];
   @Input() nome: string;
 
   constructor() { }
 
   ngOnInit() {
+
+  }
+
+  carregarGrafico(categorias: string[], dados: any[]) {
     this.chart = new Chart({
       chart: {
         type: 'column',
@@ -34,7 +36,7 @@ export class GraficoColunasComponent implements OnInit {
         }
       },
       xAxis: {
-        categories: this.categorias,
+        categories: categorias,
         labels: {
           style: {
             color: '#ffffff'
@@ -56,7 +58,7 @@ export class GraficoColunasComponent implements OnInit {
       },
       series: [{
         name: this.nome,
-        data: this.dados
+        data: dados
       }]
     });
   }

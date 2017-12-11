@@ -1,3 +1,4 @@
-<div class="row tile_count" *ngFor="let totalizador of totalizadores">
-  <indicador-total titulo="{{ totalizador.desc }}">{{ totalizador.total }}</indicador-total>
+<div class="row tile_count">
+  <indicador-total [cor]="getCor(n)" *ngFor="let totalizador of totalizadores; let n = index" titulo="{{ totalizador.desc }}">{{ totalizador.total }}
+  </indicador-total>
 </div>

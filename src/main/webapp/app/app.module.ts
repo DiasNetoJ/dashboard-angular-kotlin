@@ -10,6 +10,12 @@ import {GraficoPizzaComponent} from './grafico-pizza/grafico-pizza.component';
 import {TotalizadoresComponent} from './totalizadores/totalizadores.component';
 import {TotalizadoresService} from "./totalizadores.service";
 import {HttpModule} from "@angular/http";
+import { GraficoComparativoAlunosComponent } from './grafico-comparativo-alunos/grafico-comparativo-alunos.component';
+import { ComparativosService } from "./comparativos.service";
+import { GraficoComparativoOrientadoresComponent } from './grafico-comparativo-orientadores/grafico-comparativo-orientadores.component';
+import { GraficoPublicacaoAlunosComponent } from './grafico-publicacao-alunos/grafico-publicacao-alunos.component';
+import {PublicacoesService} from "./publicacoes.service";
+import { GraficoPublicacaoOrientadoresComponent } from './grafico-publicacao-orientadores/grafico-publicacao-orientadores.component';
 
 
 @NgModule({
@@ -18,7 +24,11 @@ import {HttpModule} from "@angular/http";
     IndicadorTotalComponent,
     GraficoColunasComponent,
     GraficoPizzaComponent,
-    TotalizadoresComponent
+    TotalizadoresComponent,
+    GraficoComparativoAlunosComponent,
+    GraficoComparativoOrientadoresComponent,
+    GraficoPublicacaoAlunosComponent,
+    GraficoPublicacaoOrientadoresComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +36,7 @@ import {HttpModule} from "@angular/http";
     HttpModule,
     NgbModule.forRoot()
   ],
-  providers: [TotalizadoresService],
+  providers: [TotalizadoresService, ComparativosService, PublicacoesService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -14,7 +14,9 @@ class AlunoResource(val repository: AlunoRepository, val service: AlunoService) 
   @GetMapping("/alunos/comparativo")
   fun getComparativo() = service.getComparativo()
   @GetMapping("/alunos/publicacoes")
-  fun getPublicacoes() = repository.findAll().groupBy({ it.nome }, {it.publicacoes.count()})
+  fun getPublicacoes() = repository.findAll()
+    .groupBy({ it.nome }, { it.publicacoes.count() })
+    .map { mapOf("nome" to it.key, "total" to it.value[0] ) }
   @GetMapping("/alunos/count")
   fun getCount() = repository.count()
 }

@@ -10,10 +10,15 @@ import {Totalizador} from "./totalizador";
 })
 export class TotalizadoresComponent implements OnInit {
 
+  readonly colors = [
+    'darkblue',
+    'blue',
+    'green',
+    'orange'
+  ];
 
   totalizadores: Totalizador[];
   constructor(@Inject(TotalizadoresService) private totalizadoresService: TotalizadoresService) {
-    console.log("Constructor called!");
   }
 
 
@@ -24,5 +29,15 @@ export class TotalizadoresComponent implements OnInit {
 
   getTotalizadores() {
     this.totalizadoresService.getTotalizadores().subscribe(totalizadores => this.totalizadores = totalizadores);
+  }
+
+  getCor(index: number): string {
+    while (index > this.colors.length) {
+      index -= this.colors.length;
+      index = Math.abs(index);
+    }
+
+    return this.colors[index];
+
   }
 }

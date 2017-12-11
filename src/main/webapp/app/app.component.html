@@ -81,18 +81,8 @@
     <div class="right_col" role="main">
       <div>
         <div>
-          <!-- Indicador 5 - Totalizadores Gerais da Instituição -->
           <app-totalizadores></app-totalizadores>
-          <!--<div class="row tile_count">-->
-            <!--<indicador-total titulo="Total de alunos">5000</indicador-total>-->
-            <!--<indicador-total titulo="Total de Orientadores" cor="blue">500</indicador-total>-->
-            <!--<indicador-total titulo="Total de Cursos" cor="green">100</indicador-total>-->
-            <!--<indicador-total titulo="Total de Publicações" cor="orange">1000</indicador-total>-->
-          <!--</div>-->
-          <!-- /top tiles -->
-
           <div class="row">
-
             <!-- Indicador 1 - Rank 5 Alunos com Publicações -->
             <div class="col-md-8 col-sm-4 col-xs-12">
               <div class="x_panel tile fixed_height_320">
@@ -104,10 +94,11 @@
                   <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
-                  <h4 style="text-align: center">Alunos por Publicação</h4>
+                  <grafico-publicacao-alunos></grafico-publicacao-alunos>
+                  <!--<h4 style="text-align: center">Alunos por Publicação</h4>-->
                   <!--<div id="chartRankAlunosPublicacao" style="height: 250px"></div>-->
-                  <grafico-colunas nome="Publicações" [dados]="[50,20,30,100,80]"
-                                   [categorias]="['Robson Fernandes', 'David Fernandes', 'Cléia Fernandes', 'Rodrigo de Abreu', 'Lauro Castilho']"></grafico-colunas>
+                  <!--<grafico-colunas nome="Publicações" [dados]="[50,20,30,100,80]"-->
+                                   <!--[categorias]="['Robson Fernandes', 'David Fernandes', 'Cléia Fernandes', 'Rodrigo de Abreu', 'Lauro Castilho']"></grafico-colunas>-->
                 </div>
               </div>
             </div>
@@ -123,8 +114,9 @@
                   <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
-                  <h4 style="text-align: center">Alunos Ativos e Inativos</h4>
-                  <grafico-pizza nome="Alunos" [dados]="[['Ativos', 60],['Inativos', 40]]"></grafico-pizza>
+                  <grafico-comparativo-alunos></grafico-comparativo-alunos>
+                  <!--<h4 style="text-align: center">Alunos Ativos e Inativos</h4>-->
+                  <!--<grafico-pizza nome="Alunos"></grafico-pizza>-->
                   <!--<div id="chartComparativoAlunos" style="height: 200px"></div>-->
                 </div>
               </div>
@@ -141,9 +133,7 @@
                   <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
-                  <h4 style="text-align: center">Orientadores por Publicação</h4>
-                  <grafico-colunas nome="Publicações" [dados]="[100,200,350,100,150]"
-                                   [categorias]="['Alneu Andrade', 'João Paulo', 'Nilceu Marana', 'Roberta Spolon', 'Francisco Louzada']"></grafico-colunas>
+                  <grafico-publicacao-orientadores></grafico-publicacao-orientadores>
                 </div>
               </div>
             </div>
@@ -159,9 +149,7 @@
                   <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
-                  <h4 style="text-align: center">Orientadores Ativos e Inativos</h4>
-                  <grafico-pizza nome="Alunos" [dados]="[['Ativos', 60],['Inativos', 40]]"></grafico-pizza>
-                  <!--<div id="chartComparativoOrientadores" style="height: 200px"></div>-->
+                  <grafico-comparativo-orientadores></grafico-comparativo-orientadores>
                 </div>
               </div>
             </div>

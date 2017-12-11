@@ -3,6 +3,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
+    'global': [
+      "./node_modules/bootstrap/dist/css/bootstrap.css",
+      "./node_modules/font-awesome/css/font-awesome.css",
+      './src/main/webapp/custom.theme.css'
+    ],
     'main': './src/main/webapp/main'
   },
   resolve: {
@@ -24,16 +29,15 @@ module.exports = {
         options: {
           minimize: true,
           caseSensitive: true,
-          removeAttributeQuotes:false,
-          minifyJS:false,
-          minifyCSS:false
+          removeAttributeQuotes: false,
+          minifyJS: false,
+          minifyCSS: false
         },
         exclude: ['./src/main/webapp/index.html']
       },
       {
         test: /\.css$/,
-        loaders: ['to-string-loader', 'css-loader'],
-        exclude: /(vendor\.css|global\.css)/
+        loaders: ['to-string-loader', 'style-loader', 'css-loader']
       },
       {
         test: /\.(jpe?g|png|gif|svg|woff2?|ttf|eot)$/i,
