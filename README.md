@@ -1,4 +1,4 @@
-# An Angular 4 and Kotlin project experience
+# An Angular 2+ and Kotlin project experience
 
 Just for fun :)
 
